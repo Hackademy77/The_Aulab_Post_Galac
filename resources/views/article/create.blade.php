@@ -68,7 +68,7 @@
 
                     <div class="mt-2">
                         <button class="btn btn-dark">Put yout Article </button>
-                        <a class="btn btn-dark" href="{{route('home')}}">backt to Home </a>
+                        <a class="btn btn-dark" href="{{route('home')}}">back to Home </a>
                     </div>
                 </form>
 

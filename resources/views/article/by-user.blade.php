@@ -1,32 +1,23 @@
 <x-layout>
     
     <x-slot name="titlePage" >
-        Home Page
+       Articles by Writer page 
     </x-slot>
     
     <x-masthead />
    <div class="container">
         <div class="row  my-5">
-            <h2>New Articles</h2>
+            <h2>Written by:{{$user->name}}</h2>
         </div>
     </div>
     <div class="container">
         <div class="row  my-5">
             @foreach ($articles as $article)
-            @if($loop->first) 
-            <div class="col-12 ">
-                <x-articles.last
+            <div class="col-12 col-md-4">
+                <x-articles.card
                 :article="$article"
                 />
             </div>
-            @else
-            <div class="col-12 ">
-                <x-articles.last
-                :article="$article"
-                :order="$orderFirst"
-                />
-            </div>
-            @endif
             @endforeach
         </div>
     </div>

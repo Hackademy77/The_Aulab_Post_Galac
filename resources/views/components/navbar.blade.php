@@ -9,6 +9,9 @@
                 <li class="nav-item">
                     <a class="nav-link  @if(Route::currentRouteName() == 'home') active @endif" aria-current="page" href="{{ route('home') }}">Home</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link  @if(Route::currentRouteName() == 'article.index') active @endif" aria-current="page" href="{{ route('article.index') }}">Articles</a>
+                </li>
                 @auth
                     <li class="nav-item">
                         <a class="nav-link  @if(Route::currentRouteName() == 'article.create') active @endif" aria-current="page" href="{{ route('article.create') }}">Add <i class="fa-solid fa-plus fa-beat fa-lg" style="color: #616161"></i></a>
