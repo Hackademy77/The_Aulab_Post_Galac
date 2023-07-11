@@ -1,6 +1,8 @@
-<nav class="navbar navbar-expand-lg bg-body-white ">
+<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
     <div class="container-fluid ">
-        <a class="navbar-brand fw-semibold fst-italic " href="{{ route('home') }}">The Aulab Post</a>
+        <a class="navbar-brand fw-semibold fst-italic" href="{{ route('home') }}">
+        <img src="{{asset('img/logo5.png')}}" class="logo">
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -48,7 +50,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link @if(Route::currentRouteName() == 'login') active @endif" aria-current="page"
-                                href="{{ route('login') }}">Login <i class="fa-solid fa-door-open fa-lg" style="color: #fe7171;"></i></a>
+                                href="{{ route('login') }}">Login <i class="fa-solid fa-door-open fa-lg" style="color: #616161"></i></a>
                         </li>
                     @endguest
                 </ul>

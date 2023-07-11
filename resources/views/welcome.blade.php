@@ -6,7 +6,7 @@
     
     <x-masthead />
    <div class="container">
-        <div class="row  my-5">
+        <div class="row  my-5 text-center fw-bolder">
             <h2>New Articles</h2>
         </div>
     </div>
