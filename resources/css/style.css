@@ -6,3 +6,7 @@
     background-position: center;
     background-repeat: no-repeat;
   }
+
+  .bg-custom{
+    background-color: #ebd2cf;
+  }

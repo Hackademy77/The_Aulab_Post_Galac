@@ -1,4 +1,4 @@
-<form method="post" action="{{ route('article.store') }}" enctype="multipart/form-data">
+{{-- <form method="post" action="{{ route('article.store') }}" enctype="multipart/form-data">
     @csrf
     <div class="mb-3">
         <label for="title" class="form-label">Title</label>
@@ -25,7 +25,7 @@
                     <option value="{{ $category->id }}">{{ $category->name }}</option>        
                 @endforeach
             </select>
-    </div>
+    </div> --}}
     {{-- <div class="mb-3">
         <label for="tags" class="form-label">Tags</label>
             <select name="tags[]" class="form-select" multiple>
@@ -35,10 +35,13 @@
             </select>
             <p class="small fst-italic">usare Ctrl + Click per selezionare più tag</p>
     </div> --}}
-    <div class="mb-3">
+    {{-- <div class="mb-3">
         <label for="body" class="form-label">Body</label>
         <textarea name="body" cols="30" rows="10" class="form-control"></textarea>
     </div>
 
     <button type="submit" class="btn btn-success">Salva</button>
-</form>
+</form> --}}
+
+
+
