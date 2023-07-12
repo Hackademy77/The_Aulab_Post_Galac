@@ -34,6 +34,13 @@
                         
                     </ul>
                 </li>
+
+                @auth
+                    <li class="nav-item">
+                        <a class="nav-link  @if(Route::currentRouteName() == 'careers') active @endif" aria-current="page" href="{{ route('careers') }}">Work with us</a>
+                    </li>
+                @endauth
+
                 <ul class="navbar-nav mb-2 mb-lg-0 text-center">
                     @auth
                         <li class="nav-item">
