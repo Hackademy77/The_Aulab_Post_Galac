@@ -41,6 +41,15 @@
                     </li>
                 @endauth
 
+                @auth
+                    @if(Auth::user()->is_admin)
+                        <li class="nav-item"> 
+                            <a href="{{route('admin.dashboard')}}" class="dropdown-item nav-link  @if(Route::currentRouteName() == 'admin.dashboard') active @endif" aria-current="page">Dashboard Admin</a>
+                        </li>
+                    @endif
+                @endauth    
+
+
                 <ul class="navbar-nav mb-2 mb-lg-0 text-center">
                     @auth
                         <li class="nav-item">
