@@ -37,8 +37,8 @@
                         </div>
 
                         <div class="mb3">
-                            <label for="image" class="form-label fw-bold ">Immagine</label>
-                            <input name="image" type="file" class="form-control" id ="image">
+                            <label for="image" class="form-label fw-bold ">Images</label>
+                            <input name="image" type="file" class="form-control" id ="image"> 
                         </div>
 
                         <div class="mb3">
