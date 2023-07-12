@@ -23,9 +23,14 @@
                     <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Categorie
                     </a>
+
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Sport</a></li>
-                        <li><a class="dropdown-item" href="#">Politica</a></li>
+                        <li><a class="dropdown-item" href="#">Politics</a></li>
+                        <li><a class="dropdown-item" href="#">Economy</a></li>
+                        <li><a class="dropdown-item" href="#">News</a></li>
+                        <li><a class="dropdown-item" href="#">Entertaiment</a></li>
+                        <li><a class="dropdown-item" href="#">Nature</a></li>
                         
                     </ul>
                 </li>

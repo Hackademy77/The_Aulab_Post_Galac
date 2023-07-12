@@ -12,7 +12,7 @@
 
         <p class="card-text">Written by <a href="{{route('article.byWriter',['user'=>$article->user->id])}}" class="text-dark fw-bold"> {{$article->user->name}} </a> at {{$article->created_at->format('d/m/Y')}}</p>
         
-        <a href="{{route('article.show',compact('article'))}}" class="card-link text-dark fw-bold">Read Full -> </a>
+        <a href="{{route('article.show',compact('article'))}}" class="card-link text-dark fw-bold">Read Full <i class="fa-solid fa-arrow-right fa-sm" style="color: #000000;"></i> </a>
         
     </div>
 </div>

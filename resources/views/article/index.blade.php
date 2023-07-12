@@ -11,7 +11,7 @@
         </div>
         <div class="container-fluid">
             <div class="container">
-            <div class="row justify-content-between  m-5">
+            <div class="row justify-content-between">
                 @foreach ($articles as $article)
                 <div class="col-12 col-md-4 py-5">
                     <x-articles.card
