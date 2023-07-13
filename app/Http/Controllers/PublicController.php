@@ -14,7 +14,7 @@ class PublicController extends Controller
 
         $orderFirst="order-first";
         
-        $articles = Article::orderBy('created_at', 'desc')->take(2)->get(); 
+        $articles = Article::where('is_accepted', true)->orderBy('created_at', 'desc')->take(2)->get(); 
         return view('welcome', compact('articles'),compact('orderFirst') );
     }
 

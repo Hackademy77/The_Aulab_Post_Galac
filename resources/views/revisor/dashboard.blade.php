@@ -2,7 +2,7 @@
     <div class="container-fluid p-5 bg-custom text-center text-white">
         <div class="row justify-content-center">
             <h1 class="display-1">
-                Welcome back, Administrator! 
+                Welcome back, Reviewer! 
             </h1>    
         </div>
     </div>
@@ -10,9 +10,9 @@
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-12">
-                <h2>Jop application to administration role.</h2>
-                <x-requests-table
-                :roleRequests="$adminRequests" role="administrator"
+                <h2>Articles to review</h2>
+                <x-articles-table
+                :articles="$unrevisionedArticles" 
                 />
             </div>
         </div>
@@ -20,9 +20,9 @@
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-12">
-                <h2>Jop application to reviewer role.</h2>
-                <x-requests-table
-                :roleRequests="$revisorRequests" role="reviewer"
+                <h2>Published articles</h2>
+                <x-articles-table
+                :articles="$acceptedArticles" 
                 />
             </div>
         </div>
@@ -30,9 +30,9 @@
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-12">
-                <h2>Jop application to editor role.</h2>
-                <x-requests-table
-                :roleRequests="$writerRequests" role="editor"
+                <h2>Rejected articles</h2>
+                <x-articles-table
+                :articles="$rejectedArticles" 
                 />
             </div>
         </div>

@@ -16,7 +16,7 @@
                 </li>
                 @auth
                     <li class="nav-item">
-                        <a class="nav-link  @if(Route::currentRouteName() == 'article.create') active @endif" aria-current="page" href="{{ route('article.create') }}">Add <i class="fa-solid fa-plus fa-beat fa-lg" style="color: #616161"></i></a>
+                        <a class="nav-link  @if(Route::currentRouteName() == 'article.create') active @endif" aria-current="page" href="{{ route('article.create') }}"><i class="fa-solid fa-plus fa-beat fa-lg" style="color: #616161"></i> Article</a>
                     </li>
                 @endauth
                 <li class="nav-item dropdown">
@@ -49,6 +49,14 @@
                     @endif
                 @endauth    
 
+                @auth
+                    @if(Auth::user()->is_revisor)
+                        <li class="nav-item"> 
+                            <a href="{{route('revisor.dashboard')}}" class="dropdown-item nav-link  @if(Route::currentRouteName() == 'revisor.dashboard') active @endif" aria-current="page">Dashboard Reviewer</a>
+                        </li>
+                    @endif
+                @endauth  
+
 
                 <ul class="navbar-nav mb-2 mb-lg-0 text-center">
                     @auth
@@ -71,7 +79,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link @if(Route::currentRouteName() == 'login') active @endif" aria-current="page"
-                                href="{{ route('login') }}">Login <i class="fa-solid fa-door-open fa-lg" style="color: #616161"></i></a>
+                                href="{{ route('login') }}">Login </a>
                         </li>
                     @endguest
                 </ul>
