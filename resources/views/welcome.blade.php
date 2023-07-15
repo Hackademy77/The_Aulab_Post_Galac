@@ -6,12 +6,12 @@
     
     <x-masthead />
    <div class="container">
-        <div class="row  my-5 text-center fw-bolder">
-            <h2>New Articles</h2>
+        <div class="row  my-5 text-center fw-bolder ">
+            <h2 class="display-4">New Articles</h2>
         </div>
     </div>
     <div class="container">
-        <div class="row  my-5">
+        <div class="row my-5 ">
             @foreach ($articles as $article)
             @if($loop->first) 
             <div class="col-12 ">

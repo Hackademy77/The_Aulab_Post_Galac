@@ -1,42 +1,50 @@
 <x-layout>
-    <div class="container-fluid p-5 bg-custom text-center text-white">
-        <div class="row justify-content-center">
-            <h1 class="display-1">
+    <x-slot name="titlePage" >
+        Dashboard Reviewer Page
+    </x-slot>
+
+    <div class="container-fluid p-5 text-dark bg-revisor">
+        <div class="row justify-content-center my-5 px-5">
+            <h2 class="display-4">
                 Welcome back, Reviewer! 
-            </h1>    
+            </h2>  
         </div>
+    </div>
+
+    <div class="bg-custom py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-12">
+                    <h2>Articles to review</h2>
+                    <x-articles-table
+                    :articles="$unrevisionedArticles" 
+                    />
+                </div>
+            </div>
+        </div>
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-12">
+                    <h2>Published articles</h2>
+                    <x-articles-table
+                    :articles="$acceptedArticles" 
+                    />
+                </div>
+            </div>
+        </div>
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-12">
+                    <h2>Rejected articles</h2>
+                    <x-articles-table
+                    :articles="$rejectedArticles" 
+                    />
+                </div>
+            </div>
+        </div>
+    
     </div>
     
-    <div class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <h2>Articles to review</h2>
-                <x-articles-table
-                :articles="$unrevisionedArticles" 
-                />
-            </div>
-        </div>
-    </div>
-    <div class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <h2>Published articles</h2>
-                <x-articles-table
-                :articles="$acceptedArticles" 
-                />
-            </div>
-        </div>
-    </div>
-    <div class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <h2>Rejected articles</h2>
-                <x-articles-table
-                :articles="$rejectedArticles" 
-                />
-            </div>
-        </div>
-    </div>
 
 
 </x-layout>    

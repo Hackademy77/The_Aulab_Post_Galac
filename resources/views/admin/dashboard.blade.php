@@ -1,42 +1,47 @@
 <x-layout>
-    <div class="container-fluid p-5 bg-custom text-center text-white">
-        <div class="row justify-content-center">
-            <h1 class="display-1">
+    <x-slot name="titlePage" >
+        Dashboard Admin Page
+    </x-slot>
+
+    <div class="container-fluid p-5 text-dark bg-revisor">
+        <div class="row justify-content-center my-5 px-5">
+            <h2 class="display-4">
                 Welcome back, Administrator! 
-            </h1>    
-        </div>
-    </div>
-    
-    <div class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <h2>Jop application to administration role.</h2>
-                <x-requests-table
-                :roleRequests="$adminRequests" role="administrator"
-                />
-            </div>
-        </div>
-    </div>
-    <div class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <h2>Jop application to reviewer role.</h2>
-                <x-requests-table
-                :roleRequests="$revisorRequests" role="reviewer"
-                />
-            </div>
-        </div>
-    </div>
-    <div class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <h2>Jop application to editor role.</h2>
-                <x-requests-table
-                :roleRequests="$writerRequests" role="editor"
-                />
-            </div>
+            </h2>  
         </div>
     </div>
 
+    <div class="bg-custom py-5">
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-12">
+                    <h2>Jop application to administration role.</h2>
+                    <x-requests-table
+                    :roleRequests="$adminRequests" role="administrator"
+                    />
+                </div>
+            </div>
+        </div>
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-12">
+                    <h2>Jop application to reviewer role.</h2>
+                    <x-requests-table
+                    :roleRequests="$revisorRequests" role="reviewer"
+                    />
+                </div>
+            </div>
+        </div>
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-12">
+                    <h2>Jop application to editor role.</h2>
+                    <x-requests-table
+                    :roleRequests="$writerRequests" role="editor"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>   
 
 </x-layout>    

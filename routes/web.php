@@ -25,6 +25,7 @@ Route::post('/careers/submit', [PublicController::class, 'careersSubmit'])->name
 
 
 Route::middleware('writer')->group(function(){
+
     Route::get('/article/create', [ArticleController::class, 'create'])->name('article.create');
 
     Route::post('article/store', [ArticleController::class, 'store'])->name('article.store');
@@ -42,6 +43,7 @@ Route::get('/article/writer/{user}', [ArticleController::class, 'byWriter'])->na
 
 
 Route::middleware('admin')->group(function(){
+
     Route::get('/admin/dashboard',[AdminController::class, 'dashboard'])->name('admin.dashboard');
 
     Route::get('/admin/{user}/set-admin',[AdminController::class, 'setAdmin'])->name('admin.setAdmin');
@@ -52,6 +54,7 @@ Route::middleware('admin')->group(function(){
 });
 
 Route::middleware('revisor')->group(function(){
+    
     Route::get('/revisor/dashboard',[RevisorController::class, 'dashboard'])->name('revisor.dashboard');
 
     Route::get('/revisor/{article}/accept',[RevisorController::class, 'acceptArticle'])->name('revisor.acceptArticle');

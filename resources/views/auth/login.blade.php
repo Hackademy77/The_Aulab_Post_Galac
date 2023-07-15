@@ -5,26 +5,40 @@
 
     <div class="container-fluid masthead">
         <div class="row justify-content-center align-items-center vh-100">
-                <div class="col-5 ">
-                    
+                <div class="col-12 col-md-12">
                     <form method="post" action="{{ route('login') }}">
                         @csrf
-                        <div class="mb-3">
-                            <label for="email" class="form-label"></label>
-                            <input type="text" placeholder="Email" class="form-control  @error('email') is-invalid @enderror" name="email">
-                            @error('email')
-                                <div class="alert text-danger">{{ $message }}</div>
-                            @enderror
+                        <div class="box-login">
+                            <div class="box">
+                                <div class="form">
+                                    <h2><span><i class="fa-solid fa-user fa-md pl-3 pt-5" style="color:#ebd2cf;"></i></span> Sign in </h2>
+                                    
+                                    <div class="inputBox">
+                                        <input type="text" required="required" class=" @error('email') is-invalid @enderror" name="email"/>
+                                        <span>Username</span>
+                                        <i></i>
+                                        @error('email')
+                                            <div class="alert text-danger m-0 ">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <div class="inputBox">
+                                        <input type="password" required="required " class=" @error('password') is-invalid @enderror" name="password" />
+                                        <span>Password</span>
+                                        <i></i>
+                                        @error('password')
+                                            <div class="alert text-danger m-0">{{ $message }}</div>
+                                        @enderror 
+                                    </div>
+                                    {{-- <div class="links">
+                                        <a href="#">Forgot Password</a>
+                                        <a href="#">Sign Up</a>
+                                    </div> --}}
+                                    <input class="mt-5" type="submit" value="Login" />
+                                    
+                                </div>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label"></label>
-                            <input type="password" placeholder="Password" class="form-control @error('email') is-invalid @enderror" name="password">
-                            @error('password')
-                                <div class="alert text-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-                        <button type="submit" class="btn btn-dark">Login</button>
-                    </form>
+                    </form> 
                 </div>
         </div>
     </div>

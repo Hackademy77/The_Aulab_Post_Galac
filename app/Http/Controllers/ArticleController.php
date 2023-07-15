@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Article;
 use App\Models\Category;
-use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
@@ -22,8 +23,10 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::where('is_accepted', true)->orderBy('created_at', 'desc')->get(); 
+        
+        $articles = Article::where('is_accepted', true)->orderBy('created_at', 'desc')->paginate(); 
         return view('article.index', compact('articles'));
+
     }
 
     /**
