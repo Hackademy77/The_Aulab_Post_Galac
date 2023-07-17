@@ -20,6 +20,6 @@ class UserIsWriter
             return $next($request);
         }
         
-        return redirect(route('home'))->with('message', 'You are not authorized, you must be a editor. Work with us!');
+        return redirect(route('home'))->with('message', 'You are not authorized, you must be an editor!');
     }
 }
