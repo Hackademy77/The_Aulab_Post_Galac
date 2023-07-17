@@ -1,12 +1,10 @@
 <div class="card mx-4">
-    <img
-      class="card__background"
-      src="{{Storage::url($article->image)}}"
-      alt="Photo of Cartagena's cathedral at the background and some colonial style houses"
-     {{--  width="1920"
-      height="2193" --}}
+    <img class="card__background" src="{{Storage::url($article->image)}}" alt="Photo of Cartagena's cathedral at the background and some colonial style houses"
+    {{-- width="1920" height="2193"  --}}
+      
+
     />
-    <div class="card__content | flow">
+      <div class="card__content | flow">
       <div class="card__content--container | flow ">
             <a href="{{route('article.byCategory',['category'=>$article->category->id])}}" class="small a-card">{{$article->category->name}}</a>
             <h2 class="h2-title card__title mt-1 ">{{$article->title}}</h2>
@@ -16,6 +14,7 @@
       <a href="{{route('article.show',compact('article'))}}" class="btn card__button read">Read more</a>
     </div>
 </div>
+
 
 
 {{-- <div class="card" style="width: 20rem;">
@@ -35,7 +34,7 @@
         <a href="{{route('article.show',compact('article'))}}" class="card-link text-dark fw-bold">Read Full <i class="fa-solid fa-arrow-right fa-sm" style="color: #000000;"></i> </a>
         
     </div>
-</div> --}}
+</div>  --}}
     
     
     

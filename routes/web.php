@@ -40,6 +40,9 @@ Route::get('/article/category/{category}', [ArticleController::class, 'byCategor
 
 Route::get('/article/writer/{user}', [ArticleController::class, 'byWriter'])->name('article.byWriter');
 
+Route::get('/article/search', [ArticleController::class, 'articleSearch'])->name('article.search');
+
+
 
 
 Route::middleware('admin')->group(function(){
