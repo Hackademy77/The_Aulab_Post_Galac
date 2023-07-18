@@ -15,9 +15,9 @@
                             </a>
                               
                               <!-- Questo è l'elemento di destinazione verso il quale la freccia punta -->
-                            <div id="sezione-destinazione">
+                            {{-- <div id="sezione-destinazione">
                                 <!-- Contenuto della sezione destinazione -->
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>

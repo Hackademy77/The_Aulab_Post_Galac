@@ -28,12 +28,12 @@
                         <form  action="{{route('article.store')}}" method="POST"enctype="multipart/form-data">
                             @csrf
     
-                            <div class="mb3">
+                            <div class="mb-3">
                                 <label for="title" class="form-label fw-bold">Title</label>
                                 <input name="title" type="text" class="form-control" id ="title" value="{{old('title')}}">
                             </div>
     
-                            <div class="mb3">
+                            <div class="mb-3">
                                 <label for="subtitle" class="form-label fw-bold ">Subtitle</label>
                                 <input name="subtitle" type="text" class="form-control" id ="title" value="{{old('subtitle')}}">
                             </div>
@@ -55,7 +55,7 @@
                             <div class="mb-3">
                                 <label for="tags" class="form-label fw-bold ">Tags: </label>
                                 <input name="tags" class="form-control" id ="tags" value = "{{old('tags')}}"> 
-                                <span class="small fst-italic">Divide each tag with a comma</span>
+                                <span class="small fst-italic">"Divide each tag with a comma"</span>
                             </div>
 
                             <div class="mb-3">  

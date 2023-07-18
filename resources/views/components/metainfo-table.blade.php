@@ -3,7 +3,7 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Name tag</th>
-            <th scope="col">Quantity related items</th>
+            <th scope="col">N° related items</th>
             <th scope="col">Update</th>
             <th scope="col">Delete</th>
 
@@ -25,7 +25,7 @@
                         <div class="alert text-danger m-0 ">{{ $message }}</div>
                     @enderror
                     <input type ="text" name ="name" placeholder= "New name tag" class ="form-control w-50 d-inline @error('name') is-invalid @enderror">
-                    <button type ="submit" class="btn btn-info text-white"> Update </button>
+                    <button type ="submit" class="btn btn-dark text-white"> Update </button>
                 </form>
             </td>
             
@@ -33,23 +33,23 @@
                 <form action ="{{route('admin.deleteTag', ['tag'=>$metaInfo])}}" method ="POST">
                     @csrf
                     @method('delete')
-                    <button type ="submit" class="btn btn-danger text-white"> Eliminate </button>
+                    <button type ="submit" class="btn btn-dark text-white"> Delete </button>
                 </form>
             </td>
             @else
             <td>
-                <form action ="" method ="">
+                <form action ="{{route('admin.editCategory', ['category'=>$metaInfo])}}" method ="POST">
                     @csrf
                     @method('put')
                     <input type ="text" name ="name" placeholder= "New name category" class ="form-control w-50 d-inline">
-                    <button type ="submit" class="btn btn-info text-white"> Update </button>
+                    <button type ="submit" class="btn btn-dark text-white"> Update </button>
                 </form>
             </td>
             <td>
-                <form action ="" method ="">
+                <form action ="{{route('admin.deleteCategory', ['category'=>$metaInfo])}}" method ="POST">
                     @csrf
                     @method('delete')
-                    <button type ="submit" class="btn btn-danger text-white"> Eliminate </button>
+                    <button type ="submit" class="btn btn-dark text-white"> Delete </button>
                 </form>
             </td>
             @endif

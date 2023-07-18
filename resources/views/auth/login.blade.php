@@ -14,7 +14,7 @@
                                     <h2><span><i class="fa-solid fa-user fa-md pl-3 pt-5" style="color:#ebd2cf;"></i></span> Sign in </h2>
                                     
                                     <div class="inputBox">
-                                        <input type="text" required="required" class=" @error('email') is-invalid @enderror" name="email"/>
+                                        <input type="text" required="required" class=" bg-custom  @error('email') is-invalid @enderror" name="email"/>
                                         <span>Username</span>
                                         <i></i>
                                         @error('email')

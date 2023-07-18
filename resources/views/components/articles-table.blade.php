@@ -21,7 +21,7 @@
     
                 <td>
                     @if(is_null($article->is_accepted))
-                        <a href="{{route('article.show', compact('article'))}}" class="btn bg-custom-dark text-white">Read the article</a>
+                        <a href="{{route('article.show', compact('article'))}}" class="btn btn-dark text-white">Read the article</a>
                     @else
                         <a href="{{route('revisor.undoArticle', compact('article'))}}" class="btn btn-dark text-white">Send in review</a>    
                     @endif

@@ -25,7 +25,7 @@ class ArticleController extends Controller
     public function index()
     {
         
-        $articles = Article::where('is_accepted', true)->orderBy('created_at', 'desc')->paginate(); 
+        $articles = Article::where('is_accepted', true)->orderBy('created_at', 'desc')->paginate(6); 
         return view('article.index', compact('articles'));
 
     }
@@ -46,8 +46,8 @@ class ArticleController extends Controller
         $request->validate([
 
 
-            'title'=>'required|unique:articles|min:5',
-            'subtitle'=>'required|unique:articles|min:5',
+            'title'=>'required|unique:articles|min:15',
+            'subtitle'=>'required|unique:articles|min:15',
             'body'=>'required|min:10',
             'image' =>'image|required',
             'category'=>'required',
@@ -76,7 +76,7 @@ class ArticleController extends Controller
         
 
 
-        return redirect(route('home'))->with ('message', 'The Article created successfully!');
+        return redirect(route('home'))->with ('message', 'The Article created successfully!  Wait the revision by our Reviewer.');
 
     }
 

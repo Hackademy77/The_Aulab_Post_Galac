@@ -16,7 +16,12 @@
             <div class="col-12 col-md-8">
                 <h2>{{$article->title}}</h2>
                 <h4 class="card-subtitle mb-2 text-body-secondary">{{$article->subtitle}}</h4>
-                <p class="small text-capitalize mb-1 fw-bold"><a href="{{route('article.byCategory',['category'=>$article->category->id])}}" class=" text-dark">{{$article->category->name}}</a></p>
+
+                @if ($article -> category)
+                    <p class="small text-capitalize mb-1 fw-bold"><a href="{{route('article.byCategory',['category'=>$article->category->id])}}" class=" text-dark">{{$article->category->name}}</a></p>
+                @else
+                    <p class="small  text-capitalize text-muted"> Uncategorized</p>
+                @endif 
 
                 <p class="small fst-italic text-capitalize mt-0 pt-0">
                     @foreach($article->tags as $tag)

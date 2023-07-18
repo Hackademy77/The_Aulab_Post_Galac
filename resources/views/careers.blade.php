@@ -3,13 +3,13 @@
         Work with us page
     </x-slot>
 
-    <div class="container-fluid bg-custom text-center text-white px-0 pb-5" >
+    <div class="container-fluid bg-custom text-white px-0 pb-5" >
         <div class="row justify-content-center align-items-center work-us mx-0">
-            <h1 class="display-1">Work with us</h1>
+            <h1 class="display-1 text-center">Work with us</h1>
         </div>
 
         <div class="container bg-custom-dark  border rounded-5 my-5 ">
-            <div class="row justify-content-center align-items-center border rounded p-2 ">
+            <div class="row align-items-center border rounded p-2 ">
                 <div class="col-12 col-md-6">
                     <h2>Work as Administrator</h2>
                     <p>What will you do: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis qui repudiandae commodi dignissimos, a pariatur culpa voluptas! Consectetur explicabo minus, rerum, molestias suscipit minima, aperiam ipsam facere earum velit blanditiis.</p>

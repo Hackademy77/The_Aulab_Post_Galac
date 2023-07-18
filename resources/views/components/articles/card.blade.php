@@ -6,9 +6,13 @@
     />
       <div class="card__content | flow">
       <div class="card__content--container | flow ">
-            <a href="{{route('article.byCategory',['category'=>$article->category->id])}}" class="small a-card">{{$article->category->name}}</a>
-            <h2 class="h2-title card__title mt-1 ">{{$article->title}}</h2>
-            <p class="p-custom card__description">{{ Str::limit($article->subtitle, 37) }}</p>
+            @if ($article -> category)
+                <a href="{{route('article.byCategory',['category'=>$article->category->id])}}" class="small a-card">{{$article->category->name}}</a>
+            @else
+                <p class="small fst-italic text-capitalize a-card mb-0"> Uncategorized</p>
+            @endif 
+            <h2 class="h2-title card__title mt-1 ">{{Str::limit($article->title,18)}}</h2>
+            <p class="p-custom card__description">{{ Str::limit($article->subtitle, 30) }}</p>
             <p class="p-custom small mt-1"><a href="{{route('article.byWriter',['user'=>$article->user->id])}}" class="a-card">{{$article->user->name}}</a> - {{$article->created_at->format('d/m/Y')}}</p> 
 
             <p class="small fst-italic text-capitalize tag-custom mt-0">

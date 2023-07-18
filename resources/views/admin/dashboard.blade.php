@@ -55,6 +55,31 @@
                 </div>
             </div>
         </div>
+
+
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                
+                <div class="col-12">
+                    <h2>Platform categories</h2>
+                    <x-metainfo-table 
+                    :metaInfos="$categories" metaType="categories" /> 
+
+                    <h2>Add a new category</h2>
+                    <div class="col-4">
+                        <form class="d-flex"  action ="{{route('admin.storeCategory')}}" method ="POST">
+                            @csrf
+                            <input type ="text" name ="name" placeholder= "New name category" class ="form-control me-2">
+                            <button type ="submit" class="btn btn-dark text-white"> Add </button>
+                        </form>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+
+
     </div>   
 
 

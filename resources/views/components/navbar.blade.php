@@ -58,7 +58,7 @@
                 @auth
                     @if(Auth::user()->is_admin)
                         <li class="nav-item"> 
-                            <a href="{{route('admin.dashboard')}}" class="dropdown-item nav-link  @if(Route::currentRouteName() == 'admin.dashboard') active @endif" aria-current="page">Dashboard Admin</a>
+                            <a href="{{route('admin.dashboard')}}" class="dropdown-item nav-link  @if(Route::currentRouteName() == 'admin.dashboard') active @endif" aria-current="page"> Admin</a>
                         </li>
                     @endif
                 @endauth    
@@ -66,11 +66,14 @@
                 @auth
                     @if(Auth::user()->is_revisor)
                         <li class="nav-item"> 
-                            <a href="{{route('revisor.dashboard')}}" class="dropdown-item nav-link  @if(Route::currentRouteName() == 'revisor.dashboard') active @endif" aria-current="page">Dashboard Reviewer</a>
+                            <a href="{{route('revisor.dashboard')}}" class="dropdown-item nav-link  @if(Route::currentRouteName() == 'revisor.dashboard') active @endif" aria-current="page">Reviewer</a>
                         </li>
                     @endif
                 @endauth  
-
+                <form class="d-flex" method="GET" action="{{route('article.search')}}">
+                    <input class="form-control me-2" type="search" name="query" placeholder="Search" aria-label="Search">
+                    <button class="btn bg-search " type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
                 @auth
                     <li class="nav-item">
                         <span class="nav-link">Hi, {{ Auth::user()->name }}</span>
@@ -79,7 +82,7 @@
                         <form action="{{ route('logout') }}" method="post">
                         @csrf
                             <button type="submit" class="btn ">
-                                <i class="fa-solid fa-right-to-bracket fa-xl" style="color: #616161"></i>
+                                <i class="fa-solid fa-right-to-bracket fa-xl" style="color: #ebd2cf"></i>
                             </button>   
                         </form>
                     </li>
@@ -97,10 +100,8 @@
                 
                 
             </ul>
-            <form class="d-flex" method="GET" action="{{route('article.search')}}">
-                <input class="form-control me-2" type="search" name="query" placeholder="Search" aria-label="Search">
-                <button class="btn bg-custom" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </form>
+         
+            
             
         </div>
     </div>

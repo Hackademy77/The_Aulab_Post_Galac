@@ -15,6 +15,15 @@
     background-color: #ebd2cf;
 }
 
+.bg-search{
+  background-color: #ebd2cf;
+
+}
+.bg-search:hover{
+  background-color: #8f8f8f;
+}
+
+
 .text-color{
   color: #ebd2cf;
 }
@@ -62,9 +71,31 @@
 
 /* PAGINATION */
 
-.paginator-custom{
-  background-color: #28292d;;
+.page-link{
+  background-color: #28292d;
+  color:var(--brand-color);
 }
+
+.active>.page-link{
+  background-color: #616164;
+}
+
+.page-item.disabled{
+  background-color:#28292d;
+}
+.pagination{
+
+  --bs-pagination-disabled-bg: #28292d;
+  
+  --bs-pagination-disabled-color: var(--brand-color);
+
+  --bs-pagination-active-border-color:#fff;
+
+  --bs-pagination-hover-color: #28292d;
+
+  --bs-pagination-focus-color: #28292d;
+}
+
 /* SEZIONE SHOW */
 
 .row-show-custom{
@@ -314,6 +345,9 @@ input[type="submit"]:active {
 opacity: 0.8;
 }
 
+input:-webkit-autofill {
+  background-color: #ebd2cf;
+}
 
 /* ARTICLE CARD */
 
