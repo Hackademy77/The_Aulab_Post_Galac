@@ -25,7 +25,7 @@
                     </div>
                     @endif
                     <div class="bg-custom-dark border rounded-5 p-5 text-white">
-                        <form  action="{{route('article.store')}}" method="post"enctype="multipart/form-data">
+                        <form  action="{{route('article.store')}}" method="POST"enctype="multipart/form-data">
                             @csrf
     
                             <div class="mb3">
@@ -38,12 +38,12 @@
                                 <input name="subtitle" type="text" class="form-control" id ="title" value="{{old('subtitle')}}">
                             </div>
     
-                            <div class="mb3">
+                            <div class="mb-3">
                                 <label for="image" class="form-label fw-bold ">Images</label>
                                 <input name="image" type="file" class="form-control" id ="image"> 
                             </div>
     
-                            <div class="mb3">
+                            <div class="mb-3">
                                 <label for="category" class="form-label fw-bold ">Catergory</label>
                                 <select name="category"  id="category" class="form-control text-capitalize ">
                                     @foreach ($categories as $category)
@@ -51,6 +51,13 @@
                                     @endforeach
                                 </select>
                             </div>
+
+                            <div class="mb-3">
+                                <label for="tags" class="form-label fw-bold ">Tags: </label>
+                                <input name="tags" class="form-control" id ="tags" value = "{{old('tags')}}"> 
+                                <span class="small fst-italic">Divide each tag with a comma</span>
+                            </div>
+
                             <div class="mb-3">  
                                 <label for="body" class="form-label fw-bold ">Body Text</label>
                                 <textarea name="body" id="body" cols="30" rows="10" class="form-control"> {{old('body')}}</textarea>

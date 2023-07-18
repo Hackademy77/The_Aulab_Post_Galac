@@ -13,6 +13,13 @@
             <h2 class="card-title">{{$article->title}}</h2>
 
             <h4 class="card-subtitle mb-2 text-body-secondary">{{$article->subtitle}}</h4>
+
+            <p class="small fst-italic text-capitalize">
+                @foreach($article->tags as $tag)
+                    #{{$tag->name}}
+                @endforeach
+            </p>
+
             <p>{{ Str::limit($article->body, 80) }}</p>
 
             <p class="card-text">Written by <a href="{{route('article.byWriter',['user'=>$article->user->id])}}" class="text-dark fw-bold"> {{$article->user->name}} </a> at {{$article->created_at->format('d/m/Y')}}</p>

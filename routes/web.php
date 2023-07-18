@@ -32,6 +32,7 @@ Route::middleware('writer')->group(function(){
 });
 
 
+
 Route::get('/article/index', [ArticleController::class, 'index'])->name('article.index');
 
 Route::get('/article/show/{article}', [ArticleController::class, 'show'])->name('article.show');
@@ -54,7 +55,13 @@ Route::middleware('admin')->group(function(){
     Route::get('/admin/{user}/set-revisor',[AdminController::class, 'setRevisor'])->name('admin.setRevisor');
 
     Route::get('/admin/{user}/set-writer',[AdminController::class, 'setWriter'])->name('admin.setWriter');
+
+    Route::put('/admin/edit/{tag}/tag',[AdminController::class, 'editTag'])->name('admin.editTag');
+
+    Route::delete('/admin/delete/{tag}/tag',[AdminController::class, 'deleteTag'])->name('admin.deleteTag');
 });
+
+
 
 Route::middleware('revisor')->group(function(){
     
