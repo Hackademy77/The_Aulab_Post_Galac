@@ -72,6 +72,11 @@
                             <a href="{{route('revisor.dashboard')}}" class="dropdown-item nav-link  @if(Route::currentRouteName() == 'revisor.dashboard') active @endif" aria-current="page">Reviewer</a>
                         </li>
                     @endif
+                    @if(Auth::user()->is_writer)
+                        <li class="nav-item"> 
+                            <a href="{{route('writer.dashboard')}}" class="dropdown-item nav-link  @if(Route::currentRouteName() == 'writer.dashboard') active @endif" aria-current="page">Editor</a>
+                        </li>
+                    @endif
                 @endauth  
                 <form class="d-flex" method="GET" action="{{route('article.search')}}">
                     <input class="form-control me-2" type="search" name="query" placeholder="Search" aria-label="Search">

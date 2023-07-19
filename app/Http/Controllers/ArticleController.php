@@ -9,6 +9,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
 {
@@ -76,7 +77,7 @@ class ArticleController extends Controller
         
 
 
-        return redirect(route('home'))->with ('message', 'The Article created successfully!  Wait the revision by our Reviewer.');
+        return redirect(route('home'))->with ('message', 'The Article created successfully!  Wait for the revision by our Reviewer.');
 
     }
 
@@ -93,7 +94,7 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        //
+        return view('article.edit', compact('article'));
     }
 
     /**
@@ -101,7 +102,44 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        //
+        $request->validate([
+
+            'title'=>'required|min:15|unique:articles,title,' . $article->id,
+            'subtitle'=>'required|min:15|unique:articles,subtitle,' . $article->id,
+            'body'=>'required|min:10',
+            'image' =>'image',
+            'category'=>'required',
+            'tags'=>'required',
+        ]);
+
+        $article->update([
+
+            'title'=> $request->title,
+            'subtitle'=>$request->subtitle,
+            'body'=>$request->body,
+            'category_id'=>$request->category,
+        ]);
+
+        if($request->image){
+            Storage::delete($article->image);
+            $article->update([
+                'image' => $request->file('image')->store('public/images'),
+            ]);
+        }
+
+        $tags = explode(', ', $request->tags);
+        $newTags=[];
+
+        foreach($tags as $tag) {
+            $newTag = Tag::updateOrCreate([
+                'name' => $tag,
+            ]);
+            $newTags[] = $newTag->id;
+        }
+        
+        $article->tags()->sync($newTags);
+
+        return redirect(route('writer.dashboard'))->with ('message', 'The Article updated successfully!  Wait for the revision by our Reviewer.');
     }
 
     /**
@@ -109,7 +147,11 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
-        //
+        foreach($article->tags as $tag){
+            $article ->tags()->detach($tag);
+        }
+        $article->delete();
+        return redirect(route('writer.dashboard'))->with ('message', 'The Article deleted successfully!');
     }
 
     public function byCategory(Category $category) 
