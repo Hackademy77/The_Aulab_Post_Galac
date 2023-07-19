@@ -23,19 +23,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    @vite (['resources/css/app.css', 'resources/js/app.js'])
+   
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>{{ $titlePage ?? 'Pagina senza titolo' }}</title>
+    {{-- @vite (['resources/css/app.css','resources/js/app.js']) --}}
+    <style>
 
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
   <body>
     <div class="container-fluid bg-custom pb-5 text-center">
       <div class="text-center py-5">
-        <img src="{{asset('img/logo-mail.png')}}" class="logo-mail">
+        <img src="{{ $message->embed(public_path() . '/img/logo-mail.png') }}" class="logo-mail">
       </div>
       
       <h1>We have received a request</h1>

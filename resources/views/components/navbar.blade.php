@@ -41,7 +41,7 @@
                     <ul class="dropdown-menu">
                     
                         @foreach ($categories as $category)
-                        <li ><a class="dropdown-item" href="{{route('article.byCategory', compact('category'))}}">{{$category->name}}</a></li>
+                        <li ><a class="dropdown-item text-capitalize" href="{{route('article.byCategory', compact('category'))}}">{{$category->name}}</a></li>
                         @endforeach
                         
                     </ul>
@@ -50,20 +50,23 @@
 
 
                 @auth
+
+                    @if(Auth::user()->is_admin==false)
                     <li class="nav-item">
                         <a class="nav-link  @if(Route::currentRouteName() == 'careers') active @endif" aria-current="page" href="{{ route('careers') }}">Work with us</a>
                     </li>
-                @endauth
+                    @endif
+                {{-- @endauth --}}
 
-                @auth
+                {{-- @auth --}}
                     @if(Auth::user()->is_admin)
                         <li class="nav-item"> 
                             <a href="{{route('admin.dashboard')}}" class="dropdown-item nav-link  @if(Route::currentRouteName() == 'admin.dashboard') active @endif" aria-current="page"> Admin</a>
                         </li>
                     @endif
-                @endauth    
+                {{-- @endauth --}}
 
-                @auth
+                {{-- @auth --}}
                     @if(Auth::user()->is_revisor)
                         <li class="nav-item"> 
                             <a href="{{route('revisor.dashboard')}}" class="dropdown-item nav-link  @if(Route::currentRouteName() == 'revisor.dashboard') active @endif" aria-current="page">Reviewer</a>

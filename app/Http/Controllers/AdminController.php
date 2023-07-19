@@ -25,6 +25,7 @@ class AdminController extends Controller
 
         $user->update([
             'is_admin'=>true,
+            
         ]);
 
         return redirect(route('admin.dashboard'))->with('message','You have successfully made the selected user an aministrator');
@@ -85,7 +86,7 @@ class AdminController extends Controller
             'name'=>strtolower($request->name),
         ]);
 
-        return redirect(route('admin.dashboard'))->with('message','You have successfully uppdated the category');
+        return redirect(route('admin.dashboard'))->with('message','You have successfully updated the category');
 
     }
     public function deleteCategory(Category $category){

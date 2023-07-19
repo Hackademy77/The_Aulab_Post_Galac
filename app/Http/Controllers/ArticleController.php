@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 class ArticleController extends Controller
 {
     public function __construct() {
-        $this->middleware('auth')->except('index','show','byCategory', 'byWriter');
+        $this->middleware('auth')->except('index','show','byCategory', 'byWriter','articleSearch');
     }
 
 

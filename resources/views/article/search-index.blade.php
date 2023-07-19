@@ -7,7 +7,7 @@
    <div class="bg-custom">
         <div class="container">
             <div class="row pt-5">
-                <h2>You've search: <span class="text-secondary text-uppercase">{{$query}}</span></h2>
+                <h2>You are looking for: <span class="text-secondary text-uppercase">{{$query}}</span></h2>
             </div>
             <div class="row justify-content-evenly">
                 @foreach ($articles as $article)

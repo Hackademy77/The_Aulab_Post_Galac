@@ -12,11 +12,11 @@
             <div class="row align-items-center border rounded p-2 ">
                 <div class="col-12 col-md-6">
                     <h2>Work as Administrator</h2>
-                    <p>What will you do: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis qui repudiandae commodi dignissimos, a pariatur culpa voluptas! Consectetur explicabo minus, rerum, molestias suscipit minima, aperiam ipsam facere earum velit blanditiis.</p>
+                    <p>What will you do: The administrator of our blog examines the work requests received, manages the Tags and Categories assigned to our articles by modifying, adding and/or deleting them.</p>
                     <h2>Work as Reviewer</h2>
-                    <p>What will you do: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis qui repudiandae commodi dignissimos, a pariatur culpa voluptas! Consectetur explicabo minus, rerum, molestias suscipit minima, aperiam ipsam facere earum velit blanditiis.</p>
+                    <p>What will you do: The reviewer of our blog reviews all articles before publication which takes place only after its acceptance. It can also reject an article and send it for review later even after it has been published.</p>
                     <h2>Work as Editor</h2>
-                    <p>What will you do: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis qui repudiandae commodi dignissimos, a pariatur culpa voluptas! Consectetur explicabo minus, rerum, molestias suscipit minima, aperiam ipsam facere earum velit blanditiis.</p>
+                    <p>What will you do: The editor of our blog writes the articles that will be published, assigns each one a category as well as the tags.</p>
                 </div>
                 <div class="col-12 col-md-6">
                     @if($errors->any())
