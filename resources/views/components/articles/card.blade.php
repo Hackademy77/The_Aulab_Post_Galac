@@ -15,11 +15,14 @@
             <p class="p-custom card__description">{{ Str::limit($article->subtitle, 30) }}</p>
             <p class="p-custom small mt-1"><a href="{{route('article.byWriter',['user'=>$article->user->id])}}" class="a-card">{{$article->user->name}}</a> - {{$article->created_at->format('d/m/Y')}}</p> 
 
-            <p class="small fst-italic text-capitalize tag-custom mt-0">
+            <p class="small fst-italic text-capitalize tag-custom mt-0 mb-1">
                 @foreach($article->tags as $tag)
                     #{{$tag->name}}
                 @endforeach
             </p>
+
+            <p class="text-white small fst-italic my-1">Reading time {{$article->readDuration()}} min</p>
+
 
       </div>
       <a href="{{route('article.show',compact('article'))}}" class="btn card__button read mt-0">Read more</a>

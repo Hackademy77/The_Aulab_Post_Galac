@@ -17,6 +17,9 @@
                 <h2>{{$article->title}}</h2>
                 <h4 class="card-subtitle mb-2 text-body-secondary">{{$article->subtitle}}</h4>
 
+                <p class="text-muted small fst-italic">Reading time {{$article->readDuration()}} min</p>
+                
+
                 @if ($article -> category)
                     <p class="small text-capitalize mb-1 fw-bold"><a href="{{route('article.byCategory',['category'=>$article->category->id])}}" class=" text-dark">{{$article->category->name}}</a></p>
                 @else
@@ -28,6 +31,7 @@
                         #{{$tag->name}}
                     @endforeach
                 </p>
+
                 
                 <p class="card-text">{{ $article->body }}</p>
                 <p class="card-text small">By <a href="{{route('article.byWriter',['user'=>$article->user->id])}}" class=" text-dark">{{$article->user->name}}</a>  - {{$article->created_at->format('d/m/Y')}}</p>
