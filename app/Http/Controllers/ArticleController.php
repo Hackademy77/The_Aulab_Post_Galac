@@ -20,7 +20,6 @@ class ArticleController extends Controller
 
 
 
-
     /**
      * Display a listing of the resource.
      */
@@ -142,7 +141,7 @@ class ArticleController extends Controller
         
         $article->tags()->sync($newTags);
 
-        return redirect(route('writer.dashboard'))->with ('message', 'The Article updated successfully!  Wait for the revision by our Reviewer.');
+        return redirect(route('writer.dashboard'))->with ('message', 'The Article updated successfully!');
     }
 
     /**

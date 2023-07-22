@@ -74,7 +74,7 @@ class AdminController extends Controller
         }
         $tag->delete();
 
-        return redirect(route('admin.dashboard'))->with('message','You have successfully delete the tag');
+        return redirect(route('admin.dashboard'))->with('message','You have successfully deleted the tag');
 
     }
     public function editCategory(Request $request, Category $category){
@@ -94,7 +94,7 @@ class AdminController extends Controller
        
         $category->delete();
 
-        return redirect(route('admin.dashboard'))->with('message','You have successfully delete the category');
+        return redirect(route('admin.dashboard'))->with('message','You have successfully deleted the category');
 
     }
 
@@ -106,7 +106,7 @@ class AdminController extends Controller
         ]);
        
 
-        return redirect(route('admin.dashboard'))->with('message','You have successfully add a new category');
+        return redirect(route('admin.dashboard'))->with('message','You have successfully added a new category');
 
     }
 

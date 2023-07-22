@@ -14,12 +14,23 @@ class PublicController extends Controller
 
         $orderFirst="order-md-first";
         
-        $articles = Article::where('is_accepted', true)->orderBy('created_at', 'desc')->take(2)->get(); 
-        return view('welcome', compact('articles'),compact('orderFirst') );
+        $articles = Article::where('is_accepted', true)->orderBy('created_at', 'desc')->take(2)->get();
+        
+        $updateArticles = Article::where('is_accepted', true)->orderBy('updated_at', 'desc')->take(6)->get(); 
+        
+        return view('welcome', compact('articles', 'updateArticles'),compact('orderFirst'));
+    }
+
+    public function privacy(){
+        return view('privacy');
+    }
+
+    public function about(){
+        return view('about');
     }
 
     public function __construct() {
-        $this->middleware('auth')->except('home');
+        $this->middleware('auth')->except('home', 'privacy', 'about');
     }
 
     public function careers(){

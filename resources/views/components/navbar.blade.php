@@ -20,18 +20,6 @@
                     </li>
                 @endauth
 
-                {{-- <li class="nav-item">
-                    <div class="dropdown">
-                      <button class="btn color-custom fs-6 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Categorie
-                      </button>
-                      <ul class="dropdown-menu">
-                        @foreach ($categories as $category)
-                        <li ><a class="dropdown-item" href="{{route('category.show', compact('category'))}}">{{$category->name}}</a></li>
-                        @endforeach
-                      </ul> 
-                    </div>  
-                  </li>   --}}
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -56,17 +44,13 @@
                         <a class="nav-link  @if(Route::currentRouteName() == 'careers') active @endif" aria-current="page" href="{{ route('careers') }}">Work with us</a>
                     </li>
                     @endif
-                {{-- @endauth --}}
-
-                {{-- @auth --}}
+                
                     @if(Auth::user()->is_admin)
                         <li class="nav-item"> 
                             <a href="{{route('admin.dashboard')}}" class="dropdown-item nav-link  @if(Route::currentRouteName() == 'admin.dashboard') active @endif" aria-current="page"> Admin</a>
                         </li>
                     @endif
-                {{-- @endauth --}}
-
-                {{-- @auth --}}
+                
                     @if(Auth::user()->is_revisor)
                         <li class="nav-item"> 
                             <a href="{{route('revisor.dashboard')}}" class="dropdown-item nav-link  @if(Route::currentRouteName() == 'revisor.dashboard') active @endif" aria-current="page">Reviewer</a>
@@ -78,10 +62,12 @@
                         </li>
                     @endif
                 @endauth  
+
                 <form class="d-flex" method="GET" action="{{route('article.search')}}">
                     <input class="form-control me-2" type="search" name="query" placeholder="Search" aria-label="Search">
-                    <button class="btn bg-search " type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <button class="btn bg-search " type="submit"><i class="fa-solid fa-magnifying-glass text-black"></i></button>
                 </form>
+
                 @auth
                     <li class="nav-item">
                         <span class="nav-link">Hi, {{ Auth::user()->name }}</span>
@@ -95,6 +81,7 @@
                         </form>
                     </li>
                 @endauth
+                
                 @guest
                     <li class="nav-item">
                         <a class="nav-link @if(Route::currentRouteName() == 'register') active @endif" aria-current="page"

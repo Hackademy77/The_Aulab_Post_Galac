@@ -64,8 +64,8 @@
                             </div>
     
                             <div class="mt-2">
-                                <button class="btn bg-custom">Put your Article </button>
-                                <a class="btn bg-custom" href="{{route('home')}}">Back to Home </a>
+                                <button class="btn bg-custom my-2">Put your Article </button>
+                                <a class="btn bg-custom my-2" href="{{route('home')}}">Back to Home </a>
                             </div>
                         </form>
     

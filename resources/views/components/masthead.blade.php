@@ -11,7 +11,7 @@
                     <div class="row">
                         <div class="col-12-col-md-6">
                             <a href="#sezione-destinazione" class="freccia">
-                                <span></span>
+                                <span><i class="fa-solid fa-circle-arrow-down fa-bounce fa-2xl" style="color: #28292d;"></i></span>
                             </a>
                               
                               <!-- Questo è l'elemento di destinazione verso il quale la freccia punta -->

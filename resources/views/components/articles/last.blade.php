@@ -1,12 +1,12 @@
 
 <div class="container-fluid">
-    <div class="row " id="sezione-destinazione">
+    <div class="row row-last-custom" id="sezione-destinazione">
         
         <div class="col-12 col-md-6 px-0">
             <img src="{{Storage::url($article->image)}}" height="400px" width="100%" alt="...">
         </div>
 
-        <div class="col-12 col-md-6 p-5 bg-custom {{$order ?? null}} ">
+        <div class="col-12 col-md-6 p-5 bg-custom {{$order ?? null}} d-flex flex-column justify-content-center">
 
             @if ($article -> category)
 
@@ -17,9 +17,9 @@
 
             @endif 
 
-            <h2 class="card-title">{{Str::limit($article->title,25)}}</h2>
+            <h2 class="card-title">{{Str::limit($article->title,20)}}</h2>
 
-            <h4 class="card-subtitle mb-2 text-body-secondary">{{Str::limit($article->subtitle,40)}}</h4>
+            <h4 class="card-subtitle mb-2 text-body-secondary">{{Str::limit($article->subtitle,30)}}</h4>
 
             <p class="small fst-italic text-capitalize">
                 @foreach($article->tags as $tag)
@@ -27,7 +27,7 @@
                 @endforeach
             </p>
 
-            <p class="mb-2">{{ Str::limit($article->body, 80) }}</p>
+            <p class="mb-2">{{ Str::limit($article->body, 50) }}</p>
 
             <p class="card-text mb-1">Written by <a href="{{route('article.byWriter',['user'=>$article->user->id])}}" class="text-dark fw-bold">{{$article->user->name}}</a> at {{$article->created_at->format('d/m/Y')}}</p>
 

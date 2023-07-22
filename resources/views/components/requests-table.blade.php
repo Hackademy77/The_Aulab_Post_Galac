@@ -18,13 +18,13 @@
                     @switch($role)
                     
                         @case('administrator')
-                            <a href="{{route('admin.setAdmin',compact('user'))}}" class="btn btn-dark text-white">Activate the {{$role}}</a>
+                            <a href="{{route('admin.setAdmin',compact('user'))}}" class="btn border-0 btn-dark btn-custom-white btn-custom-grey">Activate</a>
                             @break
                         @case('reviewer')
-                            <a href="{{route('admin.setRevisor',compact('user'))}}" class="btn btn-dark text-white">Activate the {{$role}}</a>
+                            <a href="{{route('admin.setRevisor',compact('user'))}}" class="btn border-0 btn-dark btn-custom-white btn-custom-grey">Activate</a>
                             @break
                         @case('editor')
-                            <a href="{{route('admin.setWriter',compact('user'))}}" class="btn btn-dark text-white">Activate the {{$role}}</a>
+                            <a href="{{route('admin.setWriter',compact('user'))}}" class="btn border-0 btn-dark btn-custom-white btn-custom-grey">Activate</a>
                             @break
                               
                     @endswitch

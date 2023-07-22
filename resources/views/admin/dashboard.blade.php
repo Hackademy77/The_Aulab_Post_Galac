@@ -15,7 +15,7 @@
         <div class="container my-5">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-12">
-                    <h2>Jop application to administration role.</h2>
+                    <h2>Jop application to Administration role.</h2>
                     <x-requests-table
                     :roleRequests="$adminRequests" role="administrator"
                     />
@@ -25,7 +25,7 @@
         <div class="container my-5">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-12">
-                    <h2>Jop application to reviewer role.</h2>
+                    <h2>Jop application to Reviewer role.</h2>
                     <x-requests-table
                     :roleRequests="$revisorRequests" role="reviewer"
                     />
@@ -35,7 +35,7 @@
         <div class="container my-5">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-12">
-                    <h2>Jop application to editor role.</h2>
+                    <h2>Jop application to Editor role.</h2>
                     <x-requests-table
                     :roleRequests="$writerRequests" role="editor"
                     />
@@ -66,11 +66,11 @@
                 </div>    
             </div>
             <h2>Add a new category</h2>
-            <div class="col-12 col-md-8">
+            <div class="col-12 col-md-6">
                 <form class="d-flex"  action ="{{route('admin.storeCategory')}}" method ="POST">
                         @csrf
                     <input type ="text" name ="name" placeholder= "New name category" class ="form-control me-2">
-                    <button type ="submit" class="btn btn-dark text-white"> Add </button>
+                    <button type ="submit" class="btn border-0 btn-dark btn-admin-custom btn-custom-grey"> Add </button>
                 </form>
             </div>
         </div>

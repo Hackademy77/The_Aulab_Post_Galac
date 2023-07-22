@@ -4,7 +4,7 @@
        Articles Page
     </x-slot>
     <div class="bg-custom">
-        <div class="container">
+        <div class="container search-height">
             <div class="row py-5 text-center">
                 <h2 class="display-4">All Articles</h2>
             </div>
